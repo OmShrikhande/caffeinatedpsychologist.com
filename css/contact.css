@@ -1,0 +1,267 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #FFD3AC; /* Set the background color of the page */
+    color: #331C08; /* Set the default text color */
+}
+
+a {
+    text-decoration: none;
+    color: #FFD3AC;
+}
+
+/* Header */
+.site-header {
+    border-bottom: 1px solid #331C08;
+    padding: 1em 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #664C36; /* Change the background color to a darker shade */
+}
+
+.site-identity h1 {
+    font-size: 2em;
+    margin: 0;
+    color: #FFD3AC; /* Set the text color to match the page background */
+}
+
+.site-navigation ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5em;
+    margin: 0;
+    padding: 0;
+}
+
+.site-navigation li {
+    position: relative;
+}
+
+.site-navigation li::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #FFD3AC;
+    transition: width .3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.site-navigation li:hover::after {
+    width: 100%;
+}
+
+/* Glassmorphism Effect */
+.glassmorphism {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Contact Form Section */
+.contact-form-section {
+    padding: 4em 2em;
+    text-align: center;
+    margin: 2em auto;
+    max-width: 800px;
+    animation: slideIn 1s ease-in-out;
+}
+
+.contact-form-section h2 {
+    font-size: 2em;
+    color: #664C36;
+    margin-bottom: 1em;
+}
+
+.contact-form-section p {
+    font-size: 1.1em;
+    color: #331C08;
+    margin-bottom: 2em;
+}
+
+.contact-form-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.contact-form-section label {
+    font-size: 1em;
+    color: #331C08;
+}
+
+.contact-form-section input,
+.contact-form-section textarea {
+    padding: 0.5em;
+    border: 1px solid #664C36;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #331C08;
+    background-color: #FFF;
+}
+
+.contact-form-section button {
+    padding: 0.75em 1.5em;
+    border: none;
+    border-radius: 5px;
+    background-color: #664C36;
+    color: #FFD3AC;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form-section button:hover {
+    background-color: #331C08;
+}
+
+/* Date and Time Container */
+.date-time-container {
+    display: flex;
+    gap: 1em;
+}
+
+.date-time-container div {
+    flex: 1;
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 4em 2em;
+    margin: 2em auto;
+    max-width: 800px;
+    animation: slideIn 1s ease-in-out;
+}
+
+.faq-section h2 {
+    font-size: 2em;
+    color: #664C36;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.faq {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.faq-question {
+    background-color: #FFD3AC;
+    padding: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
+.faq-question:hover {
+    background-color: #664C36;
+    color: #FFD3AC;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 1em;
+    border-left: 2px solid #664C36;
+    margin-top: 0.5em;
+    animation: typing 2s steps(40, end);
+}
+
+.faq-answer p {
+    margin: 0;
+    padding: 1em 0;
+    color: #331C08;
+}
+
+/* Footer */
+.contact-footer {
+    padding: 2em;
+    text-align: center;
+    background-color: #664C36;
+    color: #FFD3AC;
+    border-top: 1px solid #331C08;
+}
+
+.contact-footer a {
+    margin: 0 1em;
+    color: #FFD3AC;
+    transition: color 0.3s;
+}
+
+.contact-footer a:hover {
+    color: #CCBEB1;
+}
+
+.contact-footer img {
+    width: 30px;
+    height: 30px;
+    margin: 0 0.5em;
+}
+
+.contact-footer p {
+    margin: 1em 0 0;
+    font-size: 0.9em;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .site-navigation ul {
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    .contact-form-section,
+    .faq-section {
+        padding: 2em 1em;
+        margin: 1em auto;
+    }
+
+    .date-time-container {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <title>Contact Me - Caffeinated Psychologist</title>
+    <link rel="stylesheet" href="./../css/contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="site-identity">
+            <h1><a href="./../index.html">Caffeinated Psychologist</a></h1>
+        </div>
+        <nav class="site-navigation">
+            <ul class="nav">
+                <li><a href="./../index.html">Home</a></li>
+                <li><a href="./profile.html">About</a></li>
+                <li><a href="./blog.html">Blogs</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="contact-form-section glassmorphism">
+        <h2>Contact Me</h2>
+        <p>If you have any questions or would like to schedule a session, please fill out the form below.</p>
+        <form id="contact-form" action="https://formspree.io/f/mdkaqzwk" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <div class="date-time-container">
+                <div>
+                    <label for="date">Preferred Date:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div>
+                    <label for="time">Preferred Time:</label>
+                    <input type="time" id="time" name="time" required>
+                </div>
+            </div>
+
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit" id="send-button">Send Message</button>
+        </form>
+        <p id="email-count-display"></p>
+    </section>
+
+    <section class="faq-section glassmorphism">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <h3>&#8226; What services do you offer?</h3>
+                <div class="faq-answer">
+                    <p>I offer a range of services including individual therapy, group therapy, workshops, and more.</p>
+                </div>
+            </div>
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <h3>&#8226; How can I schedule a session?</h3>
+                <div class="faq-answer">
+                    <p>You can schedule a session by filling out the contact form or by calling the provided phone number.</p>
+                </div>
+            </div>
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <h3>&#8226; What are your office hours?</h3>
+                <div class="faq-answer">
+                    <p>My office hours are Monday to Friday, 9 AM to 5 PM.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="contact-footer">
+        <div>
+            <a href="https://www.linkedin.com" title="LinkedIn"><img src="./../assets/logo/social.png" alt="LinkedIn"></a>
+            <a href="https://www.instagram.com" title="Instagram"><img src="./../assets/logo/instagram.png" alt="Instagram"></a>
+            <a href="mailto:oms.cse22@sbjit.edu.in" title="Email"><img src="./../assets/logo/email.png" alt="Email"></a>
+        </div>
+        <p>&copy; 2025 Caffeinated Psychologist. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const sendButton = document.getElementById("send-button");
+            const emailCountDisplay = document.getElementById("email-count-display");
+            const emailCountKey = "emailCount";
+            const emailCountDateKey = "emailCountDate";
+            const maxEmailsPerMonth = 48;
+
+            function getEmailCount() {
+                const emailCount = localStorage.getItem(emailCountKey);
+                const emailCountDate = localStorage.getItem(emailCountDateKey);
+                const currentDate = new Date();
+                const currentMonth = currentDate.getMonth();
+                const currentYear = currentDate.getFullYear();
+
+                if (emailCount && emailCountDate) {
+                    const emailDate = new Date(emailCountDate);
+                    if (emailDate.getMonth() === currentMonth && emailDate.getFullYear() === currentYear) {
+                        return parseInt(emailCount, 10);
+                    }
+                }
+                return 0;
+            }
+
+            function incrementEmailCount() {
+                const currentDate = new Date();
+                localStorage.setItem(emailCountKey, getEmailCount() + 1);
+                localStorage.setItem(emailCountDateKey, currentDate.toISOString());
+            }
+
+            function checkEmailLimit() {
+                const emailCount = getEmailCount();
+                emailCountDisplay.textContent = `Total emails sent this month: ${emailCount}`;
+                if (emailCount >= maxEmailsPerMonth) {
+                    sendButton.disabled = true;
+                    sendButton.textContent = "Email Limit Reached";
+                }
+            }
+
+            document.getElementById("contact-form").addEventListener("submit", function(event) {
+                incrementEmailCount();
+                checkEmailLimit();
+            });
+
+            checkEmailLimit();
+        });
+
+        function toggleFaq(element) {
+            const answer = element.querySelector('.faq-answer');
+            if (answer.style.maxHeight) {
+                answer.style.maxHeight = null;
+            } else {
+                answer.style.maxHeight = answer.scrollHeight + "px";
+            }
+        }
+    </script>
+</body>
+</html>

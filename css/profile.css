@@ -1,0 +1,174 @@
+@font-face {
+    font-family: 'Mother Tongue';
+    src: url('./../assets/font/MotherTongue.otf') format('opentype');
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #FFD3AC; /* Set the background color of the page */
+    color: #331C08; /* Set the default text color */
+}
+
+a {
+    text-decoration: none;
+    color: #FFD3AC;
+}
+
+.site-header {
+    border-bottom: 1px solid #331C08;
+    padding: 1em 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #664C36; /* Change the background color to a darker shade */
+}
+
+.site-identity h1 {
+    font-family: 'Mother Tongue', sans-serif;
+    font-size: 2em;
+    margin: 0;
+    color: #FFD3AC; /* Set the text color to match the page background */
+}
+
+.site-navigation ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5em;
+    margin: 0;
+    padding: 0;
+}
+
+.site-navigation li {
+    position: relative;
+}
+
+.site-navigation li::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #FFD3AC;
+    transition: width .3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.site-navigation li:hover::after {
+    width: 100%;
+}
+
+.mehendi-design {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: url('./../assets/mehendi.png') no-repeat center center;
+    background-size: contain;
+}
+
+.mehendi-top-left {
+    top: 0;
+    left: 0;
+}
+
+.mehendi-top-right {
+    top: 0;
+    right: 0;
+}
+
+.mehendi-bottom-left {
+    bottom: 0;
+    left: 0;
+}
+
+.mehendi-bottom-right {
+    bottom: 0;
+    right: 0;
+}
+
+.animated-section {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.animated-section.visible {
+    opacity: 1;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 1em;
+}
+
+.profile, .education, .training, .experience {
+    padding: 2em;
+    margin: 2em auto;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.profile h2, .education h2, .training h2, .experience h2 {
+    font-family: 'Mother Tongue', sans-serif;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    position: relative;
+    padding-left: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #06c1db;
+    font-size: 1.5em;
+    line-height: 1em;
+}
+
+.contact {
+    text-align: center;
+    padding: 2em;
+    background-color: #664C36;
+    color: #FFD3AC;
+    border-top: 1px solid #331C08;
+}
+
+.contact h2 {
+    font-family: 'Mother Tongue', sans-serif;
+    margin-bottom: 1em;
+}
+
+.contact a {
+    margin: 0 1em;
+    color: #FFD3AC;
+    transition: color 0.3s;
+}
+
+.contact a:hover {
+    color: #CCBEB1;
+}
+
+.contact img {
+    width: 30px;
+    height: 30px;
+    margin: 0 0.5em;
+}
+
+.contact p {
+    margin: 1em 0 0;
+    font-size: 0.9em;
+}

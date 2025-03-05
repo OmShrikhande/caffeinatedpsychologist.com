@@ -4,142 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - Caffeinated Psychologist</title>
+    <link rel="stylesheet" href="./../css/profile.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background: linear-gradient(to bottom, #2a2a2a, #0d0d0d);
-            color: #ffffff;
-            font-family: 'Poppins', sans-serif;
-            text-align: center;
-            
-            margin: 0px;
-        }
-        .header-outer {
-        background: #1a1a1a;
-            padding: 15px 0;
-            width: 97%;
-            z-index: 1000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-left: 20px;
-        }
-        .header-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 80%;
-            margin: auto;
-        }
-        .header-logo img {
-            width: 100px;
-            transition: width 0.3s ease-in-out;
-            background-color: #1a1a1a;
-        
-        }
-        .header-navigation a, .header-navigation button {
-            color: #ffffff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: 600;
-            transition: color 0.3s ease-in-out;
-        }
-        .header-navigation a:hover, .header-navigation button:hover {
-            color: #ff00ff;
-        }
-        section, footer {
-            border: 3px solid;
-            border-image-source: linear-gradient(90deg, #ff00ff, #00ffff);
-            border-image-slice: 1;
-            animation: glow 3s infinite alternate;
-            padding: 20px;
-            margin: 20px auto;
-            width: 80%;
-            border-radius: 10px;
-            text-align: justify;
-            transition: transform 0.3s ease-in-out;
-        }
-        header{
-            border: 3px solid;
-            border-image-source: linear-gradient(90deg, #ff00ff, #00ffff);
-            border-image-slice: 1;
-            animation: glow 3s infinite alternate;
-            padding: 20px;
-            width: 80%;
-            border-radius: 30px;
-            text-align: justify;
-            transition: transform 0.3s ease-in-out;
-            
-            
-        }
-        header:hover, section:hover, footer:hover {
-            transform: scale(1.02);
-        }
-        @keyframes glow {
-            from {
-                border-image-source: linear-gradient(90deg, #ff00ff, #00ffff);
-            }
-            to {
-                border-image-source: linear-gradient(90deg, #00ffff, #ff00ff);
-            }
-        }
-        .profile-pic {
-            width: 300px;
-            height: 360px;
-            border-radius: 100%;
-            border: 5px solid #ff00ff;
-            animation: glow-pic 3s infinite alternate;
-            display: block;
-            margin: 0 auto;
-        }
-        @keyframes glow-pic {
-            from {
-                border-color: #ff00ff;
-            }
-            to {
-                border-color: #00ffff;
-            }
-        }
-        ul li {
-            list-style: none;
-            padding: 5px 0;
-        }
-        ul li::before {
-            content: "🧠 ";
-        }
-        a {
-            color: #bbb;
-            text-decoration: none;
-            transition: color 0.3s ease-in-out;
-        }
-        a:hover {
-            color: #ff00ff;
-        }
-        .contact {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            padding: 20px;
-        }
-        .contact a img {
-            width: 50px;
-            height: 50px;
-            transition: transform 0.3s ease-in-out;
-        }
-        .contact a img:hover {
-            transform: scale(1.2);
-        }
-        .animated-section {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .animated-section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const sections = document.querySelectorAll(".animated-section");
@@ -157,24 +24,27 @@
     </script>
 </head>
 <body>
-    <header class="header-outer">
-        <div class="header-inner responsive-wrapper">
-            <div class="header-logo">
-                <a href="./../index.html"><img src="./../assets/caffeinated_psychologist logo final 2.0 (1).png" /></a>
-            </div>
-            <nav class="header-navigation">
-                <a href="#">Home</a>
-                <a href="./src/profile.html">About</a>
-                <a href="#">Blog</a>
-                <a href="#">Contact Us</a>
-            
-            </nav>
+    <div class="mehendi-design mehendi-top-left"></div>
+    <div class="mehendi-design mehendi-top-right"></div>
+    <div class="mehendi-design mehendi-bottom-left"></div>
+    <div class="mehendi-design mehendi-bottom-right"></div>
+    
+    <header class="site-header">
+        <div class="site-identity">
+            <h1><a href="./../index.html">Caffeinated Psychologist</a></h1>
         </div>
+        <nav class="site-navigation">
+            <ul class="nav">
+                <li><a href="./../index.html">Home</a></li>
+                <li><a href="./profile.html">About</a></li>
+                <li><a href="./blog.html">Blogs</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </nav>
     </header>
     
-    
     <section class="profile animated-section">
-        <img src="./../assets/IMG_20241110_213303.jpg" alt="Dipti" class="profile-pic" >
+        <img src="./../assets/IMG_20241110_213303.jpg" alt="Dipti" class="profile-pic">
         <p>Welcome to the space of Caffeinated Psychologist, a platform dedicated to fostering mental well-being and breaking down the stigma surrounding mental health.</p>
         <p>With years of experience in the field, I have worked closely with individuals facing various psychological challenges. My goal is to provide evidence-based therapeutic solutions and spread awareness on mental health topics.</p>
         <p>Through workshops, one-on-one counseling, and community engagement, I strive to create a safe space for emotional growth and self-discovery.</p>
@@ -182,8 +52,10 @@
     
     <section class="education animated-section">
         <h2>Education</h2>
-        <p><strong>Master of Science in Clinical Psychology</strong> - Specialized in cognitive-behavioral therapy and psychoanalysis.</p>
-        <p><strong>Bachelor of Arts in Psychology, Philosophy, Sociology</strong> - Developed a strong foundation in human behavior, critical thinking, and social structures.</p>
+        <ul>
+            <li><strong>Master of Science in Clinical Psychology</strong> - Specialized in cognitive-behavioral therapy and psychoanalysis.</li>
+            <li><strong>Bachelor of Arts in Psychology, Philosophy, Sociology</strong> - Developed a strong foundation in human behavior, critical thinking, and social structures.</li>
+        </ul>
     </section>
     
     <section class="training animated-section">
@@ -206,9 +78,13 @@
     </section>
     
     <footer class="contact animated-section">
-        <a href="#"><img src="linkedin.png" alt="LinkedIn"></a>
-        <a href="#"><img src="instagram.png" alt="Instagram"></a>
-        <a href="#"><img src="email.png" alt="Email"></a>
+        <h2>Connect with me !!</h2>
+        <div>
+            <a href="https://www.linkedin.com" title="LinkedIn"><img src="./../assets/logo/social.png" alt="LinkedIn"></a>
+            <a href="https://www.instagram.com" title="Instagram"><img src="./../assets/logo/instagram.png" alt="Instagram"></a>
+            <a href="mailto:someone@example.com" title="Email"><img src="./../assets/logo/email.png" alt="Email"></a>
+        </div>
+        <p>&copy; 2025 Caffeinated Psychologist. All rights reserved.</p>
     </footer>
 </body>
 </html>

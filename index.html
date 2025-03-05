@@ -3,26 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | caffeinatedpsychologist.com </title>
+    <title>Home | caffeinatedpsychologist.com</title>
     <link rel="stylesheet" href="./css/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Sticky header -->
-<header class="header-outer">
-	<div class="header-inner responsive-wrapper">
-		<div class="header-logo">
-			<a href=""><img src="./assets/caffeinated_psychologist logo final 2.0 (1).png" /></a>
-		</div>
-		<nav class="header-navigation">
-			<a href="#">Home</a>
-			<a href="./src/profile.html">About</a>
-			<a href="#">Blog</a>
-			<a href="#">Contact Us</a>
-			<button>Menu</button>
-		</nav>
-	</div>
-</header>
-<!-- Content -->
+    <header class="site-header">
+        <div class="site-identity">
+            <h1><a href="#">Caffeinated Psychologist</a></h1>
+        </div>
+        <nav class="site-navigation">
+            <ul class="nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="./src/profile.html">About</a></li>
+                <li><a href="./src/blog.html">Blogs</a></li>
+                <li><a href="./src/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <!-- Welcome section -->
+    <section class="welcome animated-section">
+        <div class="mehendi-design mehendi-top-left"></div>
+        <div class="mehendi-design mehendi-bottom-right"></div>
+        <h2>Welcome</h2>
+        <p>Hey there, beautiful! Ready to dive into the world of mental wellness with a dash of caffeine and a sprinkle of sass? You've come to the right place. Let's make your mind as sharp as your wit. Scroll down and let's get started!</p>
+        <p>Feeling stressed? Anxious? Or just need someone to tell you how fabulous you are? Well, darling, you've hit the jackpot. I'm here to make your mind sparkle and your heart flutter. So, grab your favorite cup of coffee, sit back, and let's embark on this journey together. Trust me, it's going to be a wild ride!</p>
+    </section>
+
+    <!-- Image slider for upcoming sessions -->
+    <section class="slider animated-section">
+        <h2>Upcoming Sessions</h2>
+        <div class="slides">
+            <div class="slide">
+                <img src="./assets/images/japan.jpg" alt="Upcoming Session 1">
+                <div class="caption">Upcoming Session 1</div>
+            </div>
+            <div class="slide">
+                <img src="./assets/images/gohan-beast-kaioken-dragon-ball-thumb.jpg" alt="Upcoming Session 2">
+                <div class="caption">Upcoming Session 2</div>
+            </div>
+            <div class="slide">
+                <img src="./assets/images/akatsuki.jpeg" alt="Upcoming Session 3">
+                <div class="caption">Upcoming Session 3</div>
+            </div>
+        </div>
+        <div class="navigation">
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Latest blogs -->
+    <section class="latest-blogs animated-section">
+        <h2>Latest Blogs</h2>
+        <div class="blogs">
+            <article class="blog-post">
+                <img src="./assets/images/Mahadev-3D-Wallpaper-for-Home-Wall.jpg" alt="Blog 1">
+                <h3>Blog Post Title 1</h3>
+                <p>Short description of the blog post...</p>
+                <a href="./src/blog1.html" class="read-more">Read More</a>
+            </article>
+            <article class="blog-post">
+                <img src="./assets/images/Mahadev-3D-Wallpaper-for-Home-Wall.jpg" alt="Blog 2">
+                <h3>Blog Post Title 2</h3>
+                <p>Short description of the blog post...</p>
+                <a href="./src/blog2.html" class="read-more">Read More</a>
+            </article>
+            <article class="blog-post">
+                <img src="./assets/images/Mahadev-3D-Wallpaper-for-Home-Wall.jpg" alt="Blog 3">
+                <h3>Blog Post Title 3</h3>
+                <p>Short description of the blog post...</p>
+                <a href="./src/blog3.html" class="read-more">Read More</a>
+            </article>
+        </div>
+    </section>
+
+    <!-- Slider for recent sessions -->
+    <section class="recent-sessions animated-section">
+        <h2>Recent Sessions</h2>
+        <div class="slides">
+            <div class="slide">
+                <img src="./assets/images/japan.jpg" alt="Recent Session 1">
+                <div class="caption">Recent Session 1</div>
+            </div>
+            <div class="slide">
+                <img src="./assets/images/gohan-beast-kaioken-dragon-ball-thumb.jpg" alt="Recent Session 2">
+                <div class="caption">Recent Session 2</div>
+            </div>
+            <div class="slide">
+                <img src="./assets/images/160.jpg.webp" alt="Recent Session 3">
+                <div class="caption">Recent Session 3</div>
+            </div>
+        </div>
+        <div class="navigation">
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer animated-section">
+        <h2>Connect with me !!</h2>
+        <div>
+            <a href="https://www.linkedin.com" title="LinkedIn"><img src="./assets/logo/social.png" alt="LinkedIn"></a>
+            <a href="https://www.instagram.com" title="Instagram"><img src="./assets/logo/instagram.png" alt="Instagram"></a>
+            <a href="mailto:someone@example.com" title="Email"><img src="./assets/logo/email.png" alt="Email"></a>
+        </div>
+        <p>&copy; 2025 Caffeinated Psychologist. All rights reserved.</p>
+    </footer>
+
+    <script src="./js/slider.js"></script>
 </body>
 </html>
