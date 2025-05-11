@@ -134,10 +134,17 @@ a {
 .slide {
     min-width: 100%;
     box-sizing: border-box;
+    height: 700px; /* Set a fixed height for the slide container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensure content doesn't overflow */
 }
 
 .slide img {
-    width: 100%;
+    width: auto; /* Maintain aspect ratio */
+    height: 100%; /* Scale image to fit the container height */
+    object-fit: cover; /* Crop the image to fill the container */
     display: block;
     border-radius: 10px;
 }
@@ -206,40 +213,60 @@ a {
 
 .blogs {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 1em;
+    flex-wrap: wrap; /* Allows wrapping for responsiveness */
+    gap: 20px; /* Adds space between cards */
+    justify-content: center; /* Centers the cards */
 }
 
 .blog-post {
-    background-color: #FFF;
-    padding: 1em;
-    border-radius: 10px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    max-width: 300px;
-    text-align: left;
+    width: 100%; /* Full width for smaller screens */
+    max-width: 500px; /* Maximum width for larger screens */
+    height: auto; /* Adjust height dynamically */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures content doesn't overflow */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
 }
 
 .blog-post img {
-    width: 100%;
-    border-radius: 10px;
+    width: 100%; /* Ensures the image takes the full width of the card */
+    height:300px; /* Fixed height for the image */
+    object-fit: cover; /* Crops the image to fit within the dimensions */
+    border-bottom: 1px solid #ddd;
 }
 
 .blog-post h3 {
-    font-size: 1.5em;
-    margin: 0.5em 0;
+    margin: 10px 0;
+    font-size: 1.5em; /* Larger font size for titles */
+    font-weight: 600;
 }
 
-.blog-post p {
+.blog-post .blog-date {
     font-size: 1em;
-    color: #331C08;
+    color: #666;
+    margin-bottom: 10px;
 }
 
 .blog-post .read-more {
-    display: inline-block;
-    margin-top: 1em;
-    color: #06c1db;
-    font-weight: bold;
+    margin-top: auto;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.blog-post .read-more:hover {
+    background-color: #0056b3;
+}
+.image-container{
+    margin-top: 2%;
 }
 
 /* Footer */
@@ -336,5 +363,17 @@ a {
 
     .slider, .recent-sessions {
         max-width: 90%;
+    }
+
+    .blog-post {
+        max-width: 90%; /* Reduce card width for smaller screens */
+    }
+
+    .blog-post img {
+        height: 200px; /* Adjust image height for smaller screens */
+    }
+
+    .blog-post h3 {
+        font-size: 1.2em; /* Adjust title size for smaller screens */
     }
 }

@@ -6,8 +6,123 @@
     <title>Home | caffeinatedpsychologist.com</title>
     <link rel="stylesheet" href="./css/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+    .popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  position: relative;
+  animation: fadeInScale 0.4s ease-in-out;
+}
+
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+}
+
+.popup-content h3 {
+  color: #5a3b1d;
+  margin-bottom: 10px;
+}
+
+.popup-content h2 {
+  color: #002f5f;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.features {
+  text-align: left;
+  margin-bottom: 20px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.features li {
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #5a3b1d;
+}
+
+.cta-text {
+  color: #002f5f;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.register-button {
+  display: inline-block;
+  background: #c24c2d;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.maybe-later {
+  color: #5a3b1d;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.speaker-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.speaker-photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.speaker-name {
+  font-weight: bold;
+  margin: 0;
+}
+
+.speaker-title {
+  color: #5a3b1d;
+  font-size: 14px;
+  margin: 0;
+}
+
+
+@keyframes fadeInScale {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+    </style>
 </head>
-<body>
+<body loading ="lazy">
     <!-- Sticky header -->
     <header class="site-header">
         <div class="site-identity">
@@ -28,8 +143,7 @@
         <div class="mehendi-design mehendi-top-left"></div>
         <div class="mehendi-design mehendi-bottom-right"></div>
         <h2>Welcome</h2>
-        <p>Hey there, beautiful! Ready to dive into the world of mental wellness with a dash of caffeine and a sprinkle of sass? You've come to the right place. Let's make your mind as sharp as your wit. Scroll down and let's get started!</p>
-        <p>Feeling stressed? Anxious? Or just need someone to tell you how fabulous you are? Well, darling, you've hit the jackpot. I'm here to make your mind sparkle and your heart flutter. So, grab your favorite cup of coffee, sit back, and let's embark on this journey together. Trust me, it's going to be a wild ride!</p>
+        <p>Welcome! If you believe that insightful understanding and a good cup of coffee go hand-in-hand, you've come to the right place. As a psychologist who appreciates the power of both, I am dedicated to fostering mental health awareness through accessible resources and outreach. Furthermore, I share my passion for the human mind by teaching psychology, aiming to demystify its principles and inspire deeper understanding. Whether you're seeking to learn more about mental well-being or are interested in the fascinating world of psychology, let's connect and work towards greater understanding, one thoughtful interaction (and perhaps a virtual coffee!) at a time.</p>
     </section>
 
     <!-- Image slider for upcoming sessions -->
@@ -37,17 +151,10 @@
         <h2>Upcoming Sessions</h2>
         <div class="slides">
             <div class="slide">
-                <img src="./assets/images/japan.jpg" alt="Upcoming Session 1">
+                <img src="./assets/images/workshop2.png" alt="Upcoming Session 1">
                 <div class="caption">Upcoming Session 1</div>
             </div>
-            <div class="slide">
-                <img src="./assets/images/gohan-beast-kaioken-dragon-ball-thumb.jpg" alt="Upcoming Session 2">
-                <div class="caption">Upcoming Session 2</div>
-            </div>
-            <div class="slide">
-                <img src="./assets/images/akatsuki.jpeg" alt="Upcoming Session 3">
-                <div class="caption">Upcoming Session 3</div>
-            </div>
+            
         </div>
         <div class="navigation">
             <button class="prev">&#10094;</button>
@@ -60,22 +167,30 @@
         <h2>Latest Blogs</h2>
         <div class="blogs">
             <article class="blog-post">
-                <img src="./assets/images/Mahadev-3D-Wallpaper-for-Home-Wall.jpg" alt="Blog 1">
+            <div class="image-container">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEip3vICIWE0qbAoJTNjG1_f1ur4qufzkA7CUXXlyU-bcfK0D7C_Dzs1LLnzOwHDcM28MVXZyH_A0XN_OpX0Kq_OBQ3FKsgXR0ouD6wNucY25p8fgd7dDn5XxkprM4keHmX1meBA1-fDUtKCxC_4MrbufsKpVQSbMkxJg50EyvUKqzQrWxTswiaNmTDLqvnh/s320/WhatsApp%20Image%202025-05-08%20at%2010.54.20%20PM.jpeg" alt="Blog 1">
+                </div>
                 <h3>Blog Post Title 1</h3>
-                <p>Short description of the blog post...</p>
+                <p class="blog-date"></p> <!-- Placeholder for the date -->
                 <a href="./src/blog1.html" class="read-more">Read More</a>
             </article>
-            <article class="blog-post">
-                <img src="./assets/images/Mahadev-3D-Wallpaper-for-Home-Wall.jpg" alt="Blog 2">
-                <h3>Blog Post Title 2</h3>
-                <p>Short description of the blog post...</p>
-                <a href="./src/blog2.html" class="read-more">Read More</a>
+        
+            <article class="blog-post animated-section">
+                <div class="image-container">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhR4-PSRoO42Nr-igU1gbMECT8p1wUXguiWDVppBsbwCfZxIFXFyUVBOA6iCXZyiXKpjepVPnJZfCJFvf0XKjXc8DVLDinXbPWDcpRtnC7pTc60oC2CvNuOzRGPYdqMt6hCqPH_DevgW9pv5sWoIuEd23aMXsXQG7SDyNXalhcGl8T4hQiAE8vIoMzR5guk/w256-h256-p-k-no-nu/WhatsApp%20Image%202025-05-01%20at%204.37.20%20PM.jpeg" alt="Blog 1">
+                </div>
+            <h3>Blog Post Title 1</h3>
+                <p class="blog-date"></p> <!-- Placeholder for the date -->
+                <a href="./src/blog1.html" class="read-more">Read More</a>
             </article>
-            <article class="blog-post">
-                <img src="./assets/images/Mahadev-3D-Wallpaper-for-Home-Wall.jpg" alt="Blog 3">
-                <h3>Blog Post Title 3</h3>
-                <p>Short description of the blog post...</p>
-                <a href="./src/blog3.html" class="read-more">Read More</a>
+
+            <article class="blog-post animated-section">
+                <div class="image-container">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhA6WPCGS3VnqF183yKKv075LdwtdTtSAfZwVbYAN_OQOS0q40R-wvfBOQUpqKADYu-8j4Yq8G3__yBjiWERDkav5QEAdMNeNQ0xhNg5T4RKlAOR3I_db-hS2VqasGJuUCGMdU69Ok4882rXdnYUHPOlR2JC21Yg5HJriITwdiI6Bngy3UKTuyl6vRwrYme/s320/WhatsApp%20Image%202025-04-24%20at%204.56.31%20PM.jpeg" alt="Blog 1">
+                </div>
+            <h3>Blog Post Title 1</h3>
+                <p class="blog-date"></p> <!-- Placeholder for the date -->
+                <a href="./src/blog1.html" class="read-more">Read More</a>
             </article>
         </div>
     </section>
@@ -85,15 +200,15 @@
         <h2>Recent Sessions</h2>
         <div class="slides">
             <div class="slide">
-                <img src="./assets/images/japan.jpg" alt="Recent Session 1">
+                <img src="./assets/images/recworkshop1.png" alt="Recent Session 1">
                 <div class="caption">Recent Session 1</div>
             </div>
             <div class="slide">
-                <img src="./assets/images/gohan-beast-kaioken-dragon-ball-thumb.jpg" alt="Recent Session 2">
+                <img src="./assets/images/recworkshop2.jpg" alt="Recent Session 2">
                 <div class="caption">Recent Session 2</div>
             </div>
             <div class="slide">
-                <img src="./assets/images/160.jpg.webp" alt="Recent Session 3">
+                <img src="./assets/images/recworkshop3.jpg" alt="Recent Session 3">
                 <div class="caption">Recent Session 3</div>
             </div>
         </div>
@@ -111,9 +226,105 @@
             <a href="https://www.instagram.com" title="Instagram"><img src="./assets/logo/instagram.png" alt="Instagram"></a>
             <a href="mailto:someone@example.com" title="Email"><img src="./assets/logo/email.png" alt="Email"></a>
         </div>
-        <p>&copy; 2025 Caffeinated Psychologist. All rights reserved.</p>
+        <p>&copy; 2025 Caffeinated Psychologist | Crafted by Om Shrikhand. All rights reserved.</p>
+
     </footer>
 
+    
+
     <script src="./js/slider.js"></script>
+    <script>
+        // Arrays for blog data
+    const blogTitles = [
+            "In sickness and in health",  // Title for Blog Post 3
+            "Mujhe bohot gussa aa raha hai",
+            "I hate myself",
+        ,  // Title for Blog PoIf you expect nothing from somebody you are never disappointedst 1
+        ];
+
+        const blogLinks = [
+            "https://caffeinologist.blogspot.com/2025/05/mujhe-bohot-gussa-aa-raha-hai.html?m=1",
+            "https://caffeinologist.blogspot.com/2025/05/in-sickness-and-in-health.html?m=1", 
+            "https://caffeinologist.blogspot.com/2025/04/i-hate-myself.html?m=1",  // Link for Blog Post 3            
+        ];
+
+        const blogDates = [
+            "May 08, 2025",  // Date for Blog Post 2
+            "May 01, 2025",
+            "April 24, 2025",
+        ];
+
+        // Assign titles, links, and dates to the blog posts
+        document.querySelectorAll('.blog-post').forEach((postElement, index) => {
+            const titleElement = postElement.querySelector('h3');
+            const linkElement = postElement.querySelector('.read-more');
+            const dateElement = postElement.querySelector('.blog-date');
+
+            // Set title
+            if (titleElement) {
+                titleElement.textContent = blogTitles[index] || "Title not available";
+            }
+
+            // Set link
+            if (linkElement) {
+                linkElement.href = blogLinks[index] || "#";
+            }
+
+            // Set date
+            if (dateElement) {
+                dateElement.textContent = blogDates[index] || "Date not available";
+            }
+        });
+        
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const popupOverlay = document.getElementById('popup-overlay');
+        const closePopup = document.getElementById('close-popup');
+
+        document.querySelector('.maybe-later').addEventListener('click', function() {
+  document.getElementById('popup-overlay').style.display = 'none';
+});
+
+        // Check if popup has already been shown in this session
+        if (!sessionStorage.getItem('popupShown')) {
+            popupOverlay.style.display = 'flex';
+            sessionStorage.setItem('popupShown', 'true');
+        }
+
+        closePopup.addEventListener('click', function () {
+            popupOverlay.style.display = 'none';
+        });
+    });
+</script>
+
+<div id="popup-overlay" class="popup-overlay">
+  <div class="popup-content">
+    <span id="close-popup" class="close-button">&times;</span>
+    <h3>LIMITED SEATS!</h3>
+    <h2>Join Our Mental Health Awareness Workshop</h2>
+    <ul class="features">
+      <li>✨ Deep Dive into Mental Health Concepts</li>
+      <li>🧠 Awareness Strategies & Activities</li>
+      <li>❓ Live Q&A Sessions with Experts</li>
+      <li>💬 Real-Life Mental Health Stories</li>
+      <li>📄 Notes & Resources after Workshop</li>
+    </ul>
+    <p class="cta-text">
+      Secure Your Spot Now and Enhance Your Wellbeing!
+    </p>
+    <a href="./src/contact.html" class="register-button">Register & Contact Us</a>
+    <p class="maybe-later">Maybe Later</p>
+    <div class="speaker-info">
+      <img src="./assets/images/profilepic.jpg" alt="Speaker Photo" class="speaker-photo">
+      <div>
+        <p class="speaker-name">Dipti Chandani</p>
+        <p class="speaker-title">Caffeinated Psychologist</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 </body>
 </html>

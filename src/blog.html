@@ -6,8 +6,25 @@
     <title>Blog | caffeinatedpsychologist.com</title>
     <link rel="stylesheet" href="./../css/blog.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        
+        .image-container {
+    width: 100%;
+    height: 300px; /* Fixed height for the container */
+    overflow: hidden; /* Ensures no overflow */
+    border-radius: 8px; /* Optional: Adds rounded corners */
+    display: block;
+}
+
+.image-container img {
+    width: 100%; /* Ensures the image takes the full width of the container */
+    height: 100%; /* Ensures the image takes the full height of the container */
+    object-fit: contain; /* Crops the image to fill the container */
+    display: block; /* Removes any inline spacing issues */
+}
+    </style>
 </head>
-<body>
+<body loading="lazy">
     <!-- Sticky header -->
     <header class="site-header">
         <div class="site-identity">
@@ -22,29 +39,67 @@
             </ul>
         </nav>
     </header>
-
+    
     <!-- Blog section -->
     <section class="blog-section">
         <h2>My Blogs</h2>
         <div class="blogs">
             <article class="blog-post animated-section">
-                <img src="./../assets/images/Mahadev-3D-Wallpaper-for-Home-Wall.jpg" alt="Blog 1">
+            <div class="image-container">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEip3vICIWE0qbAoJTNjG1_f1ur4qufzkA7CUXXlyU-bcfK0D7C_Dzs1LLnzOwHDcM28MVXZyH_A0XN_OpX0Kq_OBQ3FKsgXR0ouD6wNucY25p8fgd7dDn5XxkprM4keHmX1meBA1-fDUtKCxC_4MrbufsKpVQSbMkxJg50EyvUKqzQrWxTswiaNmTDLqvnh/s320/WhatsApp%20Image%202025-05-08%20at%2010.54.20%20PM.jpeg" alt="Blog 1">
+                </div>
                 <h3>Blog Post Title 1</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan arcu. Proin ac consequat arcu. Nulla facilisi. Sed vitae justo nec arcu fermentum convallis. Integer nec libero nec nulla facilisis tincidunt. Suspendisse potenti. Curabitur vehicula, justo at tincidunt vehicula, sapien libero scelerisque libero, nec lacinia nunc elit nec nunc.</p>
-                <a href="#" class="read-more">Read More</a>
+                <p class="blog-date"></p> <!-- Placeholder for the date -->
+                <a href="./src/blog1.html" class="read-more">Read More</a>
+            </article>
+        
+            <article class="blog-post animated-section">
+                <div class="image-container">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhR4-PSRoO42Nr-igU1gbMECT8p1wUXguiWDVppBsbwCfZxIFXFyUVBOA6iCXZyiXKpjepVPnJZfCJFvf0XKjXc8DVLDinXbPWDcpRtnC7pTc60oC2CvNuOzRGPYdqMt6hCqPH_DevgW9pv5sWoIuEd23aMXsXQG7SDyNXalhcGl8T4hQiAE8vIoMzR5guk/w256-h256-p-k-no-nu/WhatsApp%20Image%202025-05-01%20at%204.37.20%20PM.jpeg" alt="Blog 1">
+                </div>
+            <h3>Blog Post Title 1</h3>
+                <p class="blog-date"></p> <!-- Placeholder for the date -->
+                <a href="./src/blog1.html" class="read-more">Read More</a>
+            </article>
+
+            <article class="blog-post animated-section">
+                <div class="image-container">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhA6WPCGS3VnqF183yKKv075LdwtdTtSAfZwVbYAN_OQOS0q40R-wvfBOQUpqKADYu-8j4Yq8G3__yBjiWERDkav5QEAdMNeNQ0xhNg5T4RKlAOR3I_db-hS2VqasGJuUCGMdU69Ok4882rXdnYUHPOlR2JC21Yg5HJriITwdiI6Bngy3UKTuyl6vRwrYme/s320/WhatsApp%20Image%202025-04-24%20at%204.56.31%20PM.jpeg" alt="Blog 1">
+                </div>
+            <h3>Blog Post Title 1</h3>
+                <p class="blog-date"></p> <!-- Placeholder for the date -->
+                <a href="./src/blog1.html" class="read-more">Read More</a>
+            </article>
+            
+            <article class="blog-post animated-section">
+                <div class="image-container">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgajJF4xcrB9oP8veOj8dj5aJIhuXA0SJe_GQis7ZNhiMcxA8yWKI58JBXQo1-UcvhJutO4z7xUF-3kvmmVPF-pCo-smkpIFxN8cqfJ12UngX576EeKlbXbajAKyQ-raa1cRlcgT8Dt7DzgZQkTAL50nUsb87PCddNZUKbccbUYFoiOQ2HOtLVysgWJv6fh/s320/WhatsApp%20Image%202025-03-06%20at%202.42.46%20AM.jpeg" alt="Blog 1">
+                </div>
+                <h3>Blog Post Title 1</h3>
+                <p class="blog-date"></p> <!-- Placeholder for the date -->
+                <a href="./src/blog1.html" class="read-more">Read More</a>
             </article>
             <article class="blog-post animated-section">
-                <img src="./../assets/images/Mahadev-3D-Wallpaper-for-Home-Wall.jpg" alt="Blog 2">
-                <h3>Blog Post Title 2</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan arcu. Proin ac consequat arcu. Nulla facilisi. Sed vitae justo nec arcu fermentum convallis. Integer nec libero nec nulla facilisis tincidunt. Suspendisse potenti. Curabitur vehicula, justo at tincidunt vehicula, sapien libero scelerisque libero, nec lacinia nunc elit nec nunc.</p>
-                <a href="#" class="read-more">Read More</a>
+            <div class="image-container">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhfXuVII2R7pXS3_4IuGmmW3ItHX0_2keCKP4_cYvuyeD5iw6xyEHIxH4x71hSdm3lFtKTdODDeB70n7VSK9nbNS7AE70NGw07pOwY2jPHg5b-LQZriZd6a47SAP_3-RV73lcvA8IjDSfecg8rzEX3dBVK-xyzs5qkkP2Xfs9WzkFOA5s1iENmwFGgNbJth/s320/WhatsApp%20Image%202025-02-27%20at%205.31.06%20AM.jpeg" alt="Blog 1">
+                </div>
+                <h3>Blog Post Title 1</h3>
+                <p class="blog-date"></p> <!-- Placeholder for the date -->
+                <a href="./src/blog1.html" class="read-more">Read More</a>
             </article>
+
             <article class="blog-post animated-section">
-                <img src="./../assets/images/Mahadev-3D-Wallpaper-for-Home-Wall.jpg" alt="Blog 3">
-                <h3>Blog Post Title 3</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet accumsan arcu. Proin ac consequat arcu. Nulla facilisi. Sed vitae justo nec arcu fermentum convallis. Integer nec libero nec nulla facilisis tincidunt. Suspendisse potenti. Curabitur vehicula, justo at tincidunt vehicula, sapien libero scelerisque libero, nec lacinia nunc elit nec nunc.</p>
-                <a href="#" class="read-more">Read More</a>
+                <div class="image-container">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj8sPrEswcSnWDxJ3Yv1IhMdPHVCfDUTUDTIuSODfklfXguRndIoNiWjF9Uvb3HuWAYkPxXlzqPZaTmVC2QATwXox7pS6OWRfV2ZXn2F-A7KoYKBkxIq0INM5D1RsaBRBhpZAwCvIMpEzrwV1ONLCSWVc_U4eDnMM-7wlb-ktAJQoozeThVbm7kpRMgYsjs/s320/WhatsApp%20Image%202025-02-20%20at%204.08.15%20AM.jpeg" alt="Blog 1">
+                </div>
+            <h3>Blog Post Title 1</h3>
+                <p class="blog-date"></p> <!-- Placeholder for the date -->
+                <a href="./src/blog1.html" class="read-more">Read More</a>
             </article>
+            
+            
+            
+            
             <!-- Add more blog posts as needed -->
         </div>
     </section>
@@ -61,5 +116,57 @@
     </footer>
 
     <script src="./../js/blog.js"></script>
+    <script>
+        // Arrays for blog data
+        const blogTitles = [
+            "In sickness and in health",  // Title for Blog Post 3
+            "Mujhe bohot gussa aa raha hai",
+            "I hate myself",
+            "I don't know how much to expect",  // Title for Blog PoIf you expect nothing from somebody you are never disappointedst 1
+            "This place doesn’t affect me",  // Title for Blog Post 2
+            "It’s time to celebrate",
+        ];
+
+        const blogLinks = [
+            "https://caffeinologist.blogspot.com/2025/05/mujhe-bohot-gussa-aa-raha-hai.html?m=1",
+            "https://caffeinologist.blogspot.com/2025/05/in-sickness-and-in-health.html?m=1", 
+            "https://caffeinologist.blogspot.com/2025/04/i-hate-myself.html?m=1",  // Link for Blog Post 3
+            "https://caffeinologist.blogspot.com/2025/03/i-dont-know-how-much-to-expect.html",  // Link for Blog Post 1
+            "https://caffeinologist.blogspot.com/2025/02/this-place-doesnt-affect-me.html?m=1",  // Link for Blog Post 2
+            "https://caffeinologist.blogspot.com/2025/02/its-time-to-celebrate.html?m=1",
+        ];
+
+        const blogDates = [
+            "May 08, 2025",  // Date for Blog Post 2
+            "May 01, 2025",
+            "April 24, 2025",
+            "March 06, 2025",  // Date for Blog Post 1
+            "February 27, 2025",  // Date for Blog Post 2
+            "February 20, 2025",
+              // Date for Blog Post 3
+        ];
+
+        // Assign titles, links, and dates to the blog posts
+        document.querySelectorAll('.blog-post').forEach((postElement, index) => {
+            const titleElement = postElement.querySelector('h3');
+            const linkElement = postElement.querySelector('.read-more');
+            const dateElement = postElement.querySelector('.blog-date');
+
+            // Set title
+            if (titleElement) {
+                titleElement.textContent = blogTitles[index] || "Title not available";
+            }
+
+            // Set link
+            if (linkElement) {
+                linkElement.href = blogLinks[index] || "#";
+            }
+
+            // Set date
+            if (dateElement) {
+                dateElement.textContent = blogDates[index] || "Date not available";
+            }
+        });
+    </script>
 </body>
 </html>
