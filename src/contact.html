@@ -10,19 +10,26 @@
     <link rel="icon" type="image/x-icon" href="./../assets/favicon.png">
 </head>
 <body>
-    <header class="site-header">
-        <div class="site-identity">
-            <h1><a href="./../index.html">PsyCoffee</a></h1>
-        </div>
-        <nav class="site-navigation">
-            <ul class="nav">
-                <li><a href="./../index.html">Home</a></li>
-                <li><a href="./profile.html">About</a></li>
-                <li><a href="./blog.html">Blogs</a></li>
-                <li><a href="./contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+        <header class="site-header">
+    <div class="site-identity">
+        <h1><a href="#">PsyCoffee</a></h1>
+    </div>
+
+    <button class="burger" id="burger" aria-label="Toggle menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+
+    <nav class="site-navigation" id="navMenu">
+        <ul class="nav">
+            <li><a href="./../index.html">Home</a></li>
+            <li><a href="./profile.html">About Me</a></li>
+            <li><a href="./blog.html">Blogs</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
     <section class="contact-form-section glassmorphism">
         <h2>Contact Me</h2>
@@ -150,5 +157,14 @@
             }
         }
     </script>
+<script>
+    const burger = document.getElementById('burger');
+    const navMenu = document.getElementById('navMenu');
+
+    burger.addEventListener('click', () => {
+        burger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+</script>
 </body>
 </html>
