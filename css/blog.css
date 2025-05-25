@@ -11,29 +11,33 @@ a {
 }
 
 /* Header */
+/* Header */
 .site-header {
     position: sticky;
     top: 0;
     background-color: #664C36;
     padding: 1em 2em;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     z-index: 1000;
+    flex-wrap: nowrap; /* Important: Prevent wrapping */
 }
 
+
+/* Site Identity */
 .site-identity h1 {
-    font-size: 2em;
-    margin: 0;
+    font-size: clamp(1.2rem, 4vw, 2.5rem);
     color: #FFD3AC;
+    margin: 0;
 }
 
+
+/* Navigation */
 .site-navigation ul {
     list-style: none;
     display: flex;
     gap: 1.5em;
-    margin: 0;
-    padding: 0;
 }
 
 .site-navigation li {
@@ -56,9 +60,72 @@ a {
     width: 100%;
 }
 
+/* Burger */
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.burger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #FFD3AC;
+    transition: all 0.3s ease;
+}
+
+/* Animate to X */
+.burger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .burger {
+        display: flex;
+    }
+
+    .site-navigation {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #664C36;
+        padding-bottom: 1em;
+    }
+
+    .site-navigation.active {
+        display: block;
+    }
+
+    .site-navigation ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .site-navigation li {
+        padding: 1em 0;
+        border-top: 1px solid #FFD3AC;
+    }
+}
+
+/* Blog Section */
 /* Blog Section */
 .blog-section {
-    padding: 2em;
+    padding: 2em 1em;
     text-align: center;
 }
 
@@ -88,15 +155,15 @@ a {
 
 .blogs {
     display: flex;
-    flex-wrap: wrap; /* Allows items to wrap to the next row */
-    gap: 40px; /* Adds spacing between cards */
-    justify-content: space-between; /* Distributes cards evenly */
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* Centered for better responsiveness */
 }
 
 .blog-post {
-    flex: 1 1 calc(30% - 40px); /* Each card takes 1/3 of the row minus the gap */
-    max-width: calc(30% - 40px); /* Ensures cards don't exceed 1/3 of the row */
-    box-sizing: border-box; /* Includes padding and border in width/height */
+    flex: 1 1 calc(30% - 40px);
+    max-width: calc(30% - 40px);
+    box-sizing: border-box;
     background-color: #FFF;
     padding: 1em;
     border-radius: 10px;
@@ -118,7 +185,7 @@ a {
 }
 
 .blog-post h3 {
-    font-size: 1.5em;
+    font-size: 1.3em;
     margin: 0.5em 0;
 }
 
@@ -132,6 +199,38 @@ a {
     margin-top: 1em;
     color: #06c1db;
     font-weight: bold;
+}
+
+/* ✅ Responsive for tablets and smaller devices */
+@media (max-width: 992px) {
+    .blog-post {
+        flex: 1 1 calc(45% - 20px);
+        max-width: calc(45% - 20px);
+    }
+}
+
+/* ✅ Responsive for mobile screens */
+@media (max-width: 600px) {
+    .blog-post {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .blog-section h2 {
+        font-size: 1.5em;
+    }
+
+    .blog-post h3 {
+        font-size: 1.2em;
+    }
+
+    .blog-post p {
+        font-size: 0.95em;
+    }
+
+    .blogs {
+        gap: 15px;
+    }
 }
 
 /* Footer */
@@ -188,19 +287,38 @@ a {
     font-size: 0.9em;
 }
 
-/* Responsive design */
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .blog-post {
+        flex: 1 1 calc(45% - 40px); /* Two cards per row on tablets */
+        max-width: calc(45% - 40px);
+    }
+}
+
 @media (max-width: 768px) {
-    .site-header {
-        align-items: flex-start;
-    }
-
-    .site-navigation ul {
-        flex-direction: column;
-        gap: 0.5em;
-    }
-
     .blogs {
-        flex-direction: column;
-        align-items: center;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .blog-post {
+        flex: 1 1 100%; /* Full width on small screens */
+        max-width: 100%;
+    }
+
+    .blog-post h3 {
+        font-size: 1.25em;
+    }
+
+    .blog-post p {
+        font-size: 0.95em;
+    }
+
+    .blog-section {
+        padding: 1.5em 1em;
+    }
+
+    .blog-section h2 {
+        font-size: 1.75em;
     }
 }

@@ -171,10 +171,9 @@ ul li {
 }
 
 ul li::before {
-    content: '•';
+    content: '';
     position: absolute;
     left: 0;
-    color: #06c1db;
     font-size: 1.5em;
     line-height: 1em;
 }
