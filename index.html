@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | caffeinatedpsychologist.com</title>
+    <title>Home | PsyCoffee</title>
     <link rel="stylesheet" href="./css/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-    .popup-overlay {
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.png">
+<style>
+.popup-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -124,24 +125,32 @@
 </head>
 <body loading ="lazy">
     <!-- Sticky header -->
-    <header class="site-header">
-        <div class="site-identity">
-            <h1><a href="#">Caffeinated Psychologist</a></h1>
-        </div>
-        <nav class="site-navigation">
-            <ul class="nav">
-                <li><a href="#">Home</a></li>
-                <li><a href="./src/profile.html">About</a></li>
-                <li><a href="./src/blog.html">Blogs</a></li>
-                <li><a href="./src/contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<header class="site-header">
+    <div class="site-identity">
+        <h1><a href="#">PsyCoffee</a></h1>
+    </div>
+
+    <button class="burger" id="burger" aria-label="Toggle menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+
+    <nav class="site-navigation" id="navMenu">
+        <ul class="nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="./src/profile.html">About</a></li>
+            <li><a href="./src/blog.html">Blogs</a></li>
+            <li><a href="./src/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+
 
     <!-- Welcome section -->
     <section class="welcome animated-section">
-        <div class="mehendi-design mehendi-top-left"></div>
-        <div class="mehendi-design mehendi-bottom-right"></div>
         <h2>Welcome</h2>
         <p>Welcome! If you believe that insightful understanding and a good cup of coffee go hand-in-hand, you've come to the right place. As a psychologist who appreciates the power of both, I am dedicated to fostering mental health awareness through accessible resources and outreach. Furthermore, I share my passion for the human mind by teaching psychology, aiming to demystify its principles and inspire deeper understanding. Whether you're seeking to learn more about mental well-being or are interested in the fascinating world of psychology, let's connect and work towards greater understanding, one thoughtful interaction (and perhaps a virtual coffee!) at a time.</p>
     </section>
@@ -221,12 +230,12 @@
     <!-- Footer -->
     <footer class="site-footer animated-section">
         <h2>Connect with me !!</h2>
-        <div>
-            <a href="https://www.linkedin.com" title="LinkedIn"><img src="./assets/logo/social.png" alt="LinkedIn"></a>
-            <a href="https://www.instagram.com" title="Instagram"><img src="./assets/logo/instagram.png" alt="Instagram"></a>
-            <a href="mailto:someone@example.com" title="Email"><img src="./assets/logo/email.png" alt="Email"></a>
+          <div>
+            <a href="https://caffeinologist.blogspot.com/" title="LinkedIn"><img src="https://www.blogger.com/img/logo_blogger_40px_2x.png" alt="Blogger"></a>
+            <a href="https://www.instagram.com/caffeinated_psychologist?igsh=MTVpY3diNGphdzNiOQ==" title="Instagram"><img       style="background-color: transparent;"src="https://i.pinimg.com/474x/1e/d6/e0/1ed6e0a9e69176a5fdb7e090a1046b86.jpg" alt="Instagram"></a>
+            <a href="mailto:omshrikhande73@gmail.com" title="Email"><img src="https://www.citypng.com/public/uploads/preview/flat-round-icon-contains-gmail-logo-701751695128092ryfcqw548r.png" alt="Email"></a>
         </div>
-        <p>&copy; 2025 Caffeinated Psychologist | Crafted by Om Shrikhand. All rights reserved.</p>
+        <p>&copy; 2025 PsyCoffee | Crafted by Om Shrikhande. All rights reserved.</p>
 
     </footer>
 
@@ -297,6 +306,18 @@
         });
     });
 </script>
+<script>
+    const burger = document.getElementById('burger');
+    const navMenu = document.getElementById('navMenu');
+
+    burger.addEventListener('click', () => {
+        burger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+</script>
+
+
+
 
 <div id="popup-overlay" class="popup-overlay">
   <div class="popup-content">
@@ -315,13 +336,13 @@
     <p class="cta-text">
       Secure Your Spot Now and Enhance Your Wellbeing!
     </p>
-    <a href="./src/contact.html" class="register-button">Register & Contact Us</a>
+    <a href="https://forms.gle/Nu2heK8aTNbKFJAf9" class="register-button">Register & Contact Us</a>
     <p class="maybe-later">Maybe Later</p>
     <div class="speaker-info">
       <img src="./assets/images/profilepic.jpg" alt="Speaker Photo" class="speaker-photo">
       <div>
         <p class="speaker-name">Dipti Chandani</p>
-        <p class="speaker-title">Caffeinated Psychologist</p>
+        <p class="speaker-title">PsyCoffee</p>
       </div>
     </div>
   </div>

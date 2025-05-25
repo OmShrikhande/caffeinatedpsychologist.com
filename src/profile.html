@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Caffeinated Psychologist</title>
+    <title>About Me - PsyCoffee</title>
     <link rel="stylesheet" href="./../css/profile.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./../assets/favicon.png">
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -22,6 +23,89 @@
             });
         });
     </script>
+    <style>
+        /* Footer */
+.site-footer {
+    text-align: center;
+    padding: 2em;
+    background-color: #664C36;
+    color: #FFD3AC;
+    border-top: 1px solid #331C08;
+}
+
+.site-footer h2 {
+    font-family: 'Mother Tongue', sans-serif;
+    margin-bottom: 1em;
+    text-align: center;
+    position: relative;
+}
+
+.site-footer h2::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #06c1db;
+    transition: width .3s;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.site-footer h2:hover::after {
+    width: 100%;
+}
+
+.site-footer a {
+    margin: 0 1em;
+    color: #FFD3AC;
+    transition: color 0.3s;
+}
+
+.site-footer a:hover {
+    color: #CCBEB1;
+}
+
+.site-footer img {
+    width: 30px;
+    height: 30px;
+    margin: 0 0.5em;
+}
+
+.site-footer p {
+    margin: 1em 0 0;
+    font-size: 0.9em;
+}
+.profile-pic {
+    border-radius: 50%;
+    width: 180px;
+    margin-bottom: 1em;
+    box-shadow: 0 0 10px rgba(102, 76, 54, 0.4);
+}
+
+.profile ul {
+    padding-left: 1.5em;
+    list-style: none;
+}
+
+.profile ul li {
+    position: relative;
+    padding-left: 1.5em;
+    margin-bottom: 0.75em;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.profile ul li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #06c1db;
+    font-weight: bold;
+}
+
+    </style>
 </head>
 <body>
     <div class="mehendi-design mehendi-top-left"></div>
@@ -31,7 +115,7 @@
     
     <header class="site-header">
         <div class="site-identity">
-            <h1><a href="./../index.html">Caffeinated Psychologist</a></h1>
+            <h1><a href="./../index.html">PsyCoffee</a></h1>
         </div>
         <nav class="site-navigation">
             <ul class="nav">
@@ -44,11 +128,20 @@
     </header>
     
     <section class="profile animated-section">
-        <img src="./../assets/IMG_20241110_213303.jpg" alt="Dipti" class="profile-pic">
-        <p>Welcome to the space of Caffeinated Psychologist, a platform dedicated to fostering mental well-being and breaking down the stigma surrounding mental health.</p>
-        <p>With years of experience in the field, I have worked closely with individuals facing various psychological challenges. My goal is to provide evidence-based therapeutic solutions and spread awareness on mental health topics.</p>
-        <p>Through workshops, one-on-one counseling, and community engagement, I strive to create a safe space for emotional growth and self-discovery.</p>
-    </section>
+    <img src="./../assets/images/profilepic.jpg" alt="Dipti" class="profile-pic">
+    <p>Welcome to the <strong>PsyCoffee Workshop</strong>, a unique space dedicated to brewing conversations around mental well-being and breaking down the stigma surrounding mental health.</p>
+    <p>I believe that just like a good cup of coffee, fostering mental clarity and emotional awareness requires a welcoming environment and shared understanding.</p>
+    <p>Led by me, Dipti, a passionate psychologist and mental health professional, my mission is to increase mental health awareness within our community. I recognize the significant lack of access to quality mental health care and strive to bridge this gap by providing clear and accessible information on mental health basics through interactive workshops held right here in the cafe.</p>
+    <p>Through my PsyCoffee Workshops, I aim to:</p>
+    <ul>
+        <li>Break down harmful stereotypes and promote understanding of various mental health conditions.</li>
+        <li>Cultivate clarity of thoughts and emotional awareness in individuals through guided discussions and practical exercises.</li>
+        <li>Provide accessible resources and support in a relaxed and comfortable cafe setting.</li>
+        <li>Facilitate open and honest conversations about mental health, making it easier for everyone to share and learn.</li>
+    </ul>
+    <p>I believe that everyone deserves access to mental health support and that open conversations are crucial for creating a more compassionate and understanding society. Join me on this journey towards better mental well-being, one workshop at a time.</p>
+</section>
+
     
     <section class="education animated-section">
         <h2>Education</h2>
@@ -67,24 +160,26 @@
     </section>
     
     <section class="experience animated-section">
-        <h2>Experience</h2>
-        <ul>
-            <li>Clinical Psychologist</li>
-            <li>Career Counselor</li>
-            <li>Intern Coordinator</li>
-            <li>College Psychological Counselor</li>
-            <li>Workshop Facilitator</li>
-        </ul>
-    </section>
+    <h2>Experience</h2>
+    <ul>
+        <li><strong>Clinical Psychologist</strong> - Experienced in treating mood disorders and providing therapeutic care.</li>
+        <li><strong>Career Counselor</strong> - Guided individuals in exploring and achieving their career goals.</li>
+        <li><strong>Intern Coordinator</strong> - Mentored aspiring mental health professionals through structured guidance.</li>
+        <li><strong>College Psychological Counselor</strong> - Supported students' mental health and academic success.</li>
+        <li><strong>Workshop Facilitator</strong> - Led engaging sessions on mental health for diverse groups and communities.</li>
+    </ul>
+</section>
+
     
-    <footer class="contact animated-section">
+    <footer class="site-footer animated-section">
         <h2>Connect with me !!</h2>
-        <div>
-            <a href="https://www.linkedin.com" title="LinkedIn"><img src="./../assets/logo/social.png" alt="LinkedIn"></a>
-            <a href="https://www.instagram.com" title="Instagram"><img src="./../assets/logo/instagram.png" alt="Instagram"></a>
-            <a href="mailto:someone@example.com" title="Email"><img src="./../assets/logo/email.png" alt="Email"></a>
+          <div>
+            <a href="https://caffeinologist.blogspot.com/" title="LinkedIn"><img src="https://www.blogger.com/img/logo_blogger_40px_2x.png" alt="Blogger"></a>
+            <a href="https://www.instagram.com/caffeinated_psychologist?igsh=MTVpY3diNGphdzNiOQ==" title="Instagram"><img       style="background-color: transparent;"src="https://i.pinimg.com/474x/1e/d6/e0/1ed6e0a9e69176a5fdb7e090a1046b86.jpg" alt="Instagram"></a>
+            <a href="mailto:caffeinologist.care@gmail.com" title="Email"><img src="https://www.citypng.com/public/uploads/preview/flat-round-icon-contains-gmail-logo-701751695128092ryfcqw548r.png" alt="Email"></a>
         </div>
-        <p>&copy; 2025 Caffeinated Psychologist. All rights reserved.</p>
+        <p>&copy; 2025 PsyCoffee | Crafted by Om Shrikhande. All rights reserved.</p>
+
     </footer>
 </body>
 </html>

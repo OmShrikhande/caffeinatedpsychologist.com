@@ -10,6 +10,15 @@ a {
     color: #FFD3AC;
 }
 
+
+
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 /* Header */
 .site-header {
     position: sticky;
@@ -17,23 +26,26 @@ a {
     background-color: #664C36;
     padding: 1em 2em;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     z-index: 1000;
+    flex-wrap: nowrap; /* Important: Prevent wrapping */
 }
 
+
+/* Site Identity */
 .site-identity h1 {
-    font-size: 2em;
-    margin: 0;
+    font-size: clamp(1.2rem, 4vw, 2.5rem);
     color: #FFD3AC;
+    margin: 0;
 }
 
+
+/* Navigation */
 .site-navigation ul {
     list-style: none;
     display: flex;
     gap: 1.5em;
-    margin: 0;
-    padding: 0;
 }
 
 .site-navigation li {
@@ -55,6 +67,69 @@ a {
 .site-navigation li:hover::after {
     width: 100%;
 }
+
+/* Burger */
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.burger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #FFD3AC;
+    transition: all 0.3s ease;
+}
+
+/* Animate to X */
+.burger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .burger {
+        display: flex;
+    }
+
+    .site-navigation {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #664C36;
+        padding-bottom: 1em;
+    }
+
+    .site-navigation.active {
+        display: block;
+    }
+
+    .site-navigation ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .site-navigation li {
+        padding: 1em 0;
+        border-top: 1px solid #FFD3AC;
+    }
+}
+
 
 /* Welcome Section */
 .welcome {
@@ -347,7 +422,7 @@ a {
 /* Responsive design */
 @media (max-width: 768px) {
     .site-header {
-        flex-direction: column;
+        
         align-items: flex-start;
     }
 
