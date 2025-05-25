@@ -108,24 +108,27 @@
     </style>
 </head>
 <body>
-    <div class="mehendi-design mehendi-top-left"></div>
-    <div class="mehendi-design mehendi-top-right"></div>
-    <div class="mehendi-design mehendi-bottom-left"></div>
-    <div class="mehendi-design mehendi-bottom-right"></div>
     
     <header class="site-header">
-        <div class="site-identity">
-            <h1><a href="./../index.html">PsyCoffee</a></h1>
-        </div>
-        <nav class="site-navigation">
-            <ul class="nav">
-                <li><a href="./../index.html">Home</a></li>
-                <li><a href="./profile.html">About</a></li>
-                <li><a href="./blog.html">Blogs</a></li>
-                <li><a href="./contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="site-identity">
+        <h1><a href="#">PsyCoffee</a></h1>
+    </div>
+
+    <button class="burger" id="burger" aria-label="Toggle menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </button>
+
+    <nav class="site-navigation" id="navMenu">
+        <ul class="nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="./src/profile.html">About</a></li>
+            <li><a href="./src/blog.html">Blogs</a></li>
+            <li><a href="./src/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
     
     <section class="profile animated-section">
     <img src="./../assets/images/profilepic.jpg" alt="Dipti" class="profile-pic">
@@ -181,5 +184,15 @@
         <p>&copy; 2025 PsyCoffee | Crafted by Om Shrikhande. All rights reserved.</p>
 
     </footer>
+
+    <script>
+    const burger = document.getElementById('burger');
+    const navMenu = document.getElementById('navMenu');
+
+    burger.addEventListener('click', () => {
+        burger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+</script>
 </body>
 </html>

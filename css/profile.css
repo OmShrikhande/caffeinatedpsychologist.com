@@ -15,28 +15,33 @@ a {
     color: #FFD3AC;
 }
 
+/* Header */
 .site-header {
-    border-bottom: 1px solid #331C08;
+    position: sticky;
+    top: 0;
+    background-color: #664C36;
     padding: 1em 2em;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background-color: #664C36; /* Change the background color to a darker shade */
+    justify-content: space-between;
+    z-index: 1000;
+    flex-wrap: nowrap; /* Important: Prevent wrapping */
 }
 
+
+/* Site Identity */
 .site-identity h1 {
-    font-family: 'Mother Tongue', sans-serif;
-    font-size: 2em;
+    font-size: clamp(1.2rem, 4vw, 2.5rem);
+    color: #FFD3AC;
     margin: 0;
-    color: #FFD3AC; /* Set the text color to match the page background */
 }
 
+
+/* Navigation */
 .site-navigation ul {
     list-style: none;
     display: flex;
     gap: 1.5em;
-    margin: 0;
-    padding: 0;
 }
 
 .site-navigation li {
@@ -59,33 +64,68 @@ a {
     width: 100%;
 }
 
-.mehendi-design {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background: url('./../assets/mehendi.png') no-repeat center center;
-    background-size: contain;
+/* Burger */
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
 }
 
-.mehendi-top-left {
-    top: 0;
-    left: 0;
+.burger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #FFD3AC;
+    transition: all 0.3s ease;
 }
 
-.mehendi-top-right {
-    top: 0;
-    right: 0;
+/* Animate to X */
+.burger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
 }
 
-.mehendi-bottom-left {
-    bottom: 0;
-    left: 0;
+.burger.active .bar:nth-child(2) {
+    opacity: 0;
 }
 
-.mehendi-bottom-right {
-    bottom: 0;
-    right: 0;
+.burger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .burger {
+        display: flex;
+    }
+
+    .site-navigation {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #664C36;
+        padding-bottom: 1em;
+    }
+
+    .site-navigation.active {
+        display: block;
+    }
+
+    .site-navigation ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .site-navigation li {
+        padding: 1em 0;
+        border-top: 1px solid #FFD3AC;
+    }
+}
+
 
 .animated-section {
     opacity: 0;

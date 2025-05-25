@@ -132,6 +132,7 @@ a {
 
 
 /* Welcome Section */
+/* Welcome Section */
 .welcome {
     padding: 2em;
     text-align: center;
@@ -143,12 +144,14 @@ a {
     position: relative;
 }
 
+/* Decorative mehendi images */
 .welcome .mehendi-design {
     position: absolute;
     width: 100px;
     height: 100px;
     background: url('./../assets/mehendi.png') no-repeat center center;
     background-size: contain;
+    z-index: 0;
 }
 
 .mehendi-top-left {
@@ -188,8 +191,32 @@ a {
 .welcome p {
     font-size: 1.2em;
     color: #331C08;
+    text-align: justify;
     margin-bottom: 1em;
 }
+
+/* Responsive design */
+@media screen and (max-width: 600px) {
+    .welcome {
+        padding: 1.5em 1em;
+        margin: 1em;
+    }
+
+    .welcome h2 {
+        font-size: 1.5em;
+    }
+
+    .welcome p {
+        font-size: 1em;
+        text-align: justify;
+    }
+
+    .welcome .mehendi-design {
+        width: 60px;
+        height: 60px;
+    }
+}
+
 
 /* Slider */
 .slider, .recent-sessions {
@@ -209,17 +236,17 @@ a {
 .slide {
     min-width: 100%;
     box-sizing: border-box;
-    height: 700px; /* Set a fixed height for the slide container */
+    height: 700px;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Ensure content doesn't overflow */
+    overflow: hidden;
 }
 
 .slide img {
-    width: auto; /* Maintain aspect ratio */
-    height: 100%; /* Scale image to fit the container height */
-    object-fit: cover; /* Crop the image to fill the container */
+    width: auto;
+    height: 100%;
+    object-fit: cover;
     display: block;
     border-radius: 10px;
 }
@@ -232,6 +259,7 @@ a {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 10px;
     border-radius: 5px;
+    font-size: 1.2em;
 }
 
 .navigation {
@@ -241,6 +269,7 @@ a {
     display: flex;
     justify-content: space-between;
     transform: translateY(-50%);
+    z-index: 10;
 }
 
 .navigation button {
@@ -250,10 +279,61 @@ a {
     padding: 10px;
     cursor: pointer;
     border-radius: 50%;
+    font-size: 1.5em;
 }
 
 .navigation button:hover {
     background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* css for diots */
+.dots {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.dot {
+    display: inline-block;
+    height: 12px;
+    width: 12px;
+    margin: 0 6px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #06c1db;
+}
+
+/* 📱 Responsive adjustments for mobile screens */
+@media screen and (max-width: 600px) {
+    .slider, .recent-sessions {
+        max-width: 95%;
+    }
+
+    .slide {
+        height: 300px; /* Reduce height for smaller screens */
+    }
+
+    .slide img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .caption {
+        font-size: 1em;
+        bottom: 10px;
+        left: 10px;
+        padding: 6px 8px;
+    }
+
+    .navigation button {
+        padding: 6px;
+        font-size: 1.2em;
+    }
 }
 
 /* Latest Blogs */
