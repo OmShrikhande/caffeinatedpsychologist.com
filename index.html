@@ -4,10 +4,544 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | PsyCoffee</title>
-    <link rel="stylesheet" href="./css/index.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="./assets/favicon.png">
 <style>
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #FFD3AC; /* Set the background color of the page */
+    color: #331C08; /* Set the default text color */
+}
+
+a {
+    text-decoration: none;
+    color: #FFD3AC;
+}
+
+
+
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+.site-header {
+    position: sticky;
+    top: 0;
+    background-color: #664C36;
+    padding: 1em 2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    flex-wrap: nowrap; /* Important: Prevent wrapping */
+}
+
+
+/* Site Identity */
+.site-identity h1 {
+    font-size: clamp(1.2rem, 4vw, 2.5rem);
+    color: #FFD3AC;
+    margin: 0;
+}
+
+
+/* Navigation */
+.site-navigation ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5em;
+}
+
+.site-navigation li {
+    position: relative;
+}
+
+.site-navigation li::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #FFD3AC;
+    transition: width .3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.site-navigation li:hover::after {
+    width: 100%;
+}
+
+/* Burger */
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+.burger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #FFD3AC;
+    transition: all 0.3s ease;
+}
+
+/* Animate to X */
+.burger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .burger {
+        display: flex;
+    }
+
+    .site-navigation {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #664C36;
+        padding-bottom: 1em;
+    }
+
+    .site-navigation.active {
+        display: block;
+    }
+
+    .site-navigation ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .site-navigation li {
+        padding: 1em 0;
+        border-top: 1px solid #FFD3AC;
+    }
+}
+
+
+/* Welcome Section */
+/* Welcome Section */
+.welcome {
+    padding: 2em;
+    text-align: center;
+    background-color: #FFF;
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    margin: 2em auto;
+    max-width: 800px;
+    position: relative;
+}
+
+/* Decorative mehendi images */
+.welcome .mehendi-design {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: url('./../assets/mehendi.png') no-repeat center center;
+    background-size: contain;
+    z-index: 0;
+}
+
+.mehendi-top-left {
+    top: 0;
+    left: 0;
+}
+
+.mehendi-bottom-right {
+    bottom: 0;
+    right: 0;
+}
+
+.welcome h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    text-align: center;
+    position: relative;
+}
+
+.welcome h2::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #06c1db;
+    transition: width .3s;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.welcome h2:hover::after {
+    width: 100%;
+}
+
+.welcome p {
+    font-size: 1.2em;
+    color: #331C08;
+    text-align: justify;
+    margin-bottom: 1em;
+}
+
+/* Responsive design */
+@media screen and (max-width: 600px) {
+    .welcome {
+        padding: 1.5em 1em;
+        margin: 1em;
+    }
+
+    .welcome h2 {
+        font-size: 1.5em;
+    }
+
+    .welcome p {
+        font-size: 1em;
+        text-align: justify;
+    }
+
+    .welcome .mehendi-design {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+
+/* Slider */
+.slider, .recent-sessions {
+    position: relative;
+    max-width: 80%;
+    margin: 2em auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.slide img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
+}
+
+.caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #FFD3AC;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+
+.navigation {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.navigation button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: #FFD3AC;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 1.5em;
+}
+
+.navigation button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* css for diots */
+.dots {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.dot {
+    display: inline-block;
+    height: 12px;
+    width: 12px;
+    margin: 0 6px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #06c1db;
+}
+
+/* 📱 Responsive adjustments for mobile screens */
+@media screen and (max-width: 600px) {
+    .slider, .recent-sessions {
+        max-width: 95%;
+    }
+
+    .slide {
+        height: 300px; /* Reduce height for smaller screens */
+    }
+
+    .slide img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .caption {
+        font-size: 1em;
+        bottom: 10px;
+        left: 10px;
+        padding: 6px 8px;
+    }
+
+    .navigation button {
+        padding: 6px;
+        font-size: 1.2em;
+    }
+}
+
+/* Latest Blogs */
+.latest-blogs {
+    padding: 2em;
+    text-align: center;
+}
+
+.latest-blogs h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    text-align: center;
+    position: relative;
+}
+
+.latest-blogs h2::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #06c1db;
+    transition: width .3s;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.latest-blogs h2:hover::after {
+    width: 100%;
+}
+
+.blogs {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping for responsiveness */
+    gap: 20px; /* Adds space between cards */
+    justify-content: center; /* Centers the cards */
+}
+
+.blog-post {
+    width: 100%; /* Full width for smaller screens */
+    max-width: 500px; /* Maximum width for larger screens */
+    height: auto; /* Adjust height dynamically */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures content doesn't overflow */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.blog-post img {
+    width: 100%; /* Ensures the image takes the full width of the card */
+    height:300px; /* Fixed height for the image */
+    object-fit: cover; /* Crops the image to fit within the dimensions */
+    border-bottom: 1px solid #ddd;
+}
+
+.blog-post h3 {
+    margin: 10px 0;
+    font-size: 1.5em; /* Larger font size for titles */
+    font-weight: 600;
+}
+
+.blog-post .blog-date {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.blog-post .read-more {
+    margin-top: auto;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.blog-post .read-more:hover {
+    background-color: #0056b3;
+}
+.image-container{
+    margin-top: 2%;
+}
+
+/* Footer */
+.site-footer {
+    text-align: center;
+    padding: 2em;
+    background-color: #664C36;
+    color: #FFD3AC;
+    border-top: 1px solid #331C08;
+}
+
+.site-footer h2 {
+    font-family: 'Mother Tongue', sans-serif;
+    margin-bottom: 1em;
+    text-align: center;
+    position: relative;
+}
+
+.site-footer h2::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #06c1db;
+    transition: width .3s;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.site-footer h2:hover::after {
+    width: 100%;
+}
+
+.site-footer a {
+    margin: 0 1em;
+    color: #FFD3AC;
+    transition: color 0.3s;
+}
+
+.site-footer a:hover {
+    color: #CCBEB1;
+}
+
+.site-footer img {
+    width: 30px;
+    height: 30px;
+    margin: 0 0.5em;
+}
+
+.site-footer p {
+    margin: 1em 0 0;
+    font-size: 0.9em;
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.animated-section {
+    opacity: 0;
+    animation: slideIn 1s forwards;
+}
+
+.animated-section.visible {
+    opacity: 1;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .site-header {
+        
+        align-items: flex-start;
+    }
+
+    .site-navigation ul {
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    .blogs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .slider, .recent-sessions {
+        max-width: 90%;
+    }
+
+    .blog-post {
+        max-width: 90%; /* Reduce card width for smaller screens */
+    }
+
+    .blog-post img {
+        height: 200px; /* Adjust image height for smaller screens */
+    }
+
+    .blog-post h3 {
+        font-size: 1.2em; /* Adjust title size for smaller screens */
+    }
+}
 .popup-overlay {
   position: fixed;
   top: 0;
@@ -152,7 +686,7 @@
     <!-- Welcome section -->
     <section class="welcome animated-section">
         <h2>Welcome</h2>
-        <p>Welcome! If you believe that insightful understanding and a good cup of coffee go hand-in-hand, you've come to the right place. As a psychologist who appreciates the power of both, I am dedicated to fostering mental health awareness through accessible resources and outreach. Furthermore, I share my passion for the human mind by teaching psychology, aiming to demystify its principles and inspire deeper understanding. Whether you're seeking to learn more about mental well-being or are interested in the fascinating world of psychology, let's connect and work towards greater understanding, one thoughtful interaction (and perhaps a virtual coffee!) at a time.</p>
+        <p>Welcome to the PsyCoffee Workshop, a unique space dedicated to brewing conversations around mental well-being and breaking down the stigma surrounding mental health. I believe that just like a good cup of coffee, fostering mental clarity and emotional awareness requires a welcoming environment and shared understanding.</p>
     </section>
 
     <!-- Image slider for upcoming sessions -->
@@ -248,7 +782,7 @@
             "In sickness and in health",  // Title for Blog Post 3
             "Mujhe bohot gussa aa raha hai",
             "I hate myself",
-        ,  // Title for Blog PoIf you expect nothing from somebody you are never disappointedst 1
+         // Title for Blog PoIf you expect nothing from somebody you are never disappointedst 1
         ];
 
         const blogLinks = [
